@@ -1328,7 +1328,7 @@ impl ToXml for Channel {
 
         writer.write_text_element(b"title", &self.title)?;
         writer.write_text_element(b"link", &self.link)?;
-        writer.write_text_element(b"description", &self.description)?;
+        writer.write_cdata_element(b"description", &self.description)?;
 
         if let Some(language) = self.language.as_ref() {
             writer.write_text_element(b"language", language)?;
